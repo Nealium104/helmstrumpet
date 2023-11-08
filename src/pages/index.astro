@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import tylerFront from '../images/tylerFront.jpg'
 ---
 
 <html lang="en">
@@ -11,6 +12,69 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="page-container">
+			<div>
+				<ul>
+					<li>Jazz</li>
+					<li>Lead</li>
+					<li>Orchestra</li>
+					<li>Classical</li>
+					<li>Solo</li>
+					<li>Teaching</li>
+				</ul>
+			</div>
+			<div class="image-container">
+				<h1>
+					<span class="span1">Tyler</span>
+					<span class="span2">Helms</span>
+				</h1>
+				<Image
+				class="image" 
+				src={tylerFront}
+				width={tylerFront.width}
+				height={tylerFront.height}
+				alt="Tyler in front of a lake"
+				
+				/>
+			</div>
+			<div>
+				<p>Lorem ipsum and a bunch of other stuff in a quote - Person</p>
+			</div>
+		</div>
 	</body>
 </html>
+<style>
+	.page-container {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.image-container {
+		width: 40%;
+		height: 200px;
+		background-color: black;
+	}
+
+	.image {
+		width: 100%;
+		object-fit: cover;
+	}
+	
+	h1 {
+		position: absolute;
+		z-index: 10;
+		padding-top: 300px;
+		font-size: 75px;
+		color: white;
+		display:flex;
+		flex-direction:column;
+		align-items: flex-end;
+	}
+	span1{
+		display: block;
+	}
+	span2{
+		display:block;
+		align-self: flex-end;
+	}
+</style>
