@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import tylerFrontLong from '../images/tylerFrontLong.jpg'
 import Layout from "../Layouts/Layout.astro"
 
-const valueStatements = ["Jazz", "Lead", "Orchestra", "Classical", "Solo", "Teaching"]
+const valueStatements = ["Orchestra", "Jazz", "Chamber", "Lead", "Teaching", "Solo"]
 // Use single quotes on the outside 'Like this'
 const quote = '"Lorem ipsum and a bunch of other stuff in a quote." - Person'
 ---
@@ -24,11 +24,11 @@ const quote = '"Lorem ipsum and a bunch of other stuff in a quote." - Person'
 						<span class="self-end">Helms</span>
 					</h1>
 					<Image
-					class="h-full object-cover" 
-					src={tylerFrontLong}
-					width={tylerFrontLong.width}
-					height={tylerFrontLong.height}
-					alt="Tyler in front of a lake"
+						class="h-full object-cover" 
+						src={tylerFrontLong}
+						width={tylerFrontLong.width}
+						height={tylerFrontLong.height}
+						alt="Tyler in front of a lake"
 					/>
 				</div>
 			<div class="h-screen flex items-center italic p-8">
