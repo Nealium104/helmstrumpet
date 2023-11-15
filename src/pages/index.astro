@@ -1,111 +1,38 @@
 ---
 import { Image } from "astro:assets";
-import tylerFront from '../images/tylerFront.jpg'
+import tylerFrontLong from '../images/tylerFrontLong.jpg'
 import Layout from "../Layouts/Layout.astro"
+
+const valueStatements = ["Jazz", "Lead", "Orchestra", "Classical", "Solo", "Teaching"]
+// Use single quotes on the outside 'Like this'
+const quote = '"Lorem ipsum and a bunch of other stuff in a quote." - Person'
 ---
 <Layout>
-	<body>
-		<div class="page-container">
-			<div class="value-container">
-				<ul>
-					<li>Jazz</li>
-					<li>Lead</li>
-					<li>Orchestra</li>
-					<li>Classical</li>
-					<li>Solo</li>
-					<li>Teaching</li>
+		<div class="grid grid-cols-1 md:grid-cols-3">
+			<div class="p-8 text-8xl 2xl:text-9xl text-gray-400 blur-sm select-none hidden h-screen md:block">
+				<ul class="h-full flex flex-col justify-evenly">
+					{valueStatements.map(statement => (
+						<li>{statement}</li>
+					))}
 				</ul>
 			</div>
-			<div class="image-container">
-				<div class="overlay">
+			<div class="h-screen z-10 relative">
+				<div class="overlay h-full w-full z-20 bg-black/25 absolute">
 				</div>
-					<h1>
+					<h1 class="absolute h-full w-full flex flex-col justify-center text-white z-30 text-8xl font-bold">
 						<span class="span1">Tyler</span>
-						<span class="span2">Helms</span>
+						<span class="self-end">Helms</span>
 					</h1>
 					<Image
-					class="image" 
-					src={tylerFront}
-					width={tylerFront.width}
-					height={tylerFront.height}
+					class="h-full object-cover" 
+					src={tylerFrontLong}
+					width={tylerFrontLong.width}
+					height={tylerFrontLong.height}
 					alt="Tyler in front of a lake"
 					/>
 				</div>
-			<div class="quote-container">
-				<p>Lorem ipsum and a bunch of other stuff in a quote - Person</p>
+			<div class="h-screen flex items-center italic p-8">
+				<p>{quote}</p>
 			</div>
 		</div>
-	</body>
 </Layout>
-<style>
-	.page-container {
-		display: flex;
-		justify-content: space-evenly;
-	}
-
-	.image-container {
-		width: 49.5%;
-		height: 100vh;
-		background-color: black;
-		position: relative;
-	}
-
-	.overlay {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		z-index: 10;
-		background-color: rgba(0,0,0,0.25);
-	}
-
-	.value-container {
-		width: 16.5%;
-		font-size: 6rem;
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.value-container ul {
-		padding-left: 0;
-		margin-left: 0;
-	}
-
-	.value-container li {
-		list-style-type: none;
-		font-weight: 700;
-		color: rgba(0,0,0,0);
-		line-height: 1.75,;
-		text-shadow: 1px 1px 4px #adadad;
-	}
-
-	.quote-container {
-		width: 16.5%;
-	}
-
-	.image {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-	
-	h1 {
-		position: absolute;
-		z-index: 20;
-		font-size: 9rem;
-		font-weight: 700;
-		text-shadow: 2px 2px 10px #000;
-		color: white;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-		width: 100%;
-		height: 100%;
-	}
-
-	.span2 {
-		align-self: flex-end;
-	}
-</style>
