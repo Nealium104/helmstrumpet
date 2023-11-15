@@ -10,7 +10,7 @@ const quote = '"Lorem ipsum and a bunch of other stuff in a quote." - Person'
 <Layout>
 		<div class="grid grid-cols-1 md:grid-cols-3">
 			<div class="p-8 text-8xl 2xl:text-9xl text-gray-400 blur-sm select-none hidden h-screen md:block">
-				<ul class="h-full flex flex-col justify-evenly font-extrabold uppercase">
+				<ul class="h-full flex flex-col justify-evenly font-extrabold uppercase drop-shadow-lg">
 					{valueStatements.map(statement => (
 						<li>{statement}</li>
 					))}
@@ -19,6 +19,7 @@ const quote = '"Lorem ipsum and a bunch of other stuff in a quote." - Person'
 			<div class="h-screen z-10 relative">
 				<div class="overlay h-full w-full z-20 bg-black/25 absolute">
 				</div>
+				<div class="h-full shadow-black shadow-lg">
 					<h1 class="absolute h-full w-full flex flex-col justify-center text-white z-30 text-8xl font-bold">
 						<span class="span1">Tyler</span>
 						<span class="self-end">Helms</span>
@@ -30,6 +31,7 @@ const quote = '"Lorem ipsum and a bunch of other stuff in a quote." - Person'
 						height={tylerFrontLong.height}
 						alt="Tyler in front of a lake"
 					/>
+				</div>
 				</div>
 			<div class="h-screen flex items-center italic p-8">
 				<p>{quote}</p>
