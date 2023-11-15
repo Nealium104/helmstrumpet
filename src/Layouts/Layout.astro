@@ -1,6 +1,7 @@
 ---
 import '@fontsource/source-sans-pro'
 import Nav from "../components/Nav.astro" 
+import { ViewTransitions, fade } from 'astro:transitions';
 ---
 
 <!DOCTYPE html>
@@ -11,9 +12,12 @@ import Nav from "../components/Nav.astro"
             <meta name="viewport" content="width=device-width" />
             <meta name="generator" content={Astro.generator} />
             <title>Tyler Helms</title>
+            <ViewTransitions />
         </head>
     <body class="max-w-screen-xl mx-auto font-source-sans-pro px-4">
-        <Nav />
-        <slot />
+            <Nav transition:persist />
+        <div transition:animate={fade({ duration: '1s' })}>
+            <slot />
+        </div>
     </body>
 </html>
