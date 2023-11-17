@@ -1,22 +1,6 @@
 ---
 import Layout from "../Layouts/Layout.astro";
 import { Image } from "astro:assets";
-import bioPhoto1 from "../images/bioPhoto1.jpg"
-import bioPhoto2 from "../images/bioPhoto2.jpg"
-import bioPhoto3 from "../images/bioPhoto3.jpg"
-
-
-
-const bio = ["Tyler Helms, a versatile performer and dedicated music educator, originates from the piney woods of East Texas. Currently, Tyler holds the position of Principal Trumpet for both the Delta Symphony Orchestra and the Corinth Symphony Orchestra; he has also made appearances alongside the Memphis Symphony and the Arkansas Symphony Orchestras. Beyond his orchestral roles, he frequently performs as a lead trumpeter in jazz and commercial ensembles, and delves into chamber music collaborations with a focus on non-traditional instrumentation. Tyler's dedication to expanding the musical repertoire is evident in his enthusiasm for contemporary solo works for trumpet. Tyler enjoys exploring works that expand the auditory palette of the trumpet and integrating extended technique into fundamental practice and performance. Concurrently, he maintains his role as one of the most in-demand freelancers in the greater Memphis area. ",
- "Running parallel to his performance career, Tyler oversees a thriving private studio, guiding trumpet students to notable successes in state competitions, festivals, National Trumpet Competition and college placements with generous scholarships. As a small-town product himself, Tyler is a strong advocate for fine arts in smaller communities and bringing opportunity to young trumpet players that they otherwise might not have. As such, Tyler co-founded and currently serves as Co-Chair of the International Trumpet Guild’s Pre-professional Committee. This committee is dedicated to providing educational and professional development resources globally, with the mission of supporting, educating, and representing the next generation of trumpet players.",
-  "Currently pursuing a Doctoral degree in Trumpet Performance at the University of Memphis, he earned a Masters degree in Trumpet Performance from Arkansas State University in 2021 and a Bachelor of Music Education degree from Stephen F. Austin State University in 2019. Tyler expresses deep gratitude to his esteemed mentors: David Spencer, Nairam Simoes, Chris Wilson, Jake Walburn, Stephen Campbell, and Gary Wurtz."
-]
-
-const bioPhotos = [
-    {...bioPhoto1, alt: "description of photo 1"},
-    {...bioPhoto2, alt: "description of photo 2"},
-    {...bioPhoto3, alt: "description of photo 3"}
-]
 
 const fetchData = async () => {
   try {
@@ -35,17 +19,19 @@ const contentfulData = await fetchData();
     <h1 class="text-8xl font-extrabold uppercase">Bio</h1>
     <div>
         <ul>
-            {contentfulData?.map((bioSection: any, index: number) => (    
-                <li class={`flex flex-col ${index % 2 == 0 ? "md:flex-row-reverse" : "md:flex-row"}`}>
-                    <Image
-                    class="w-full md:w-1/2 max-h-96 object-top object-cover"
-                    src={`https:${bioSection.fields.image.fields.file.url}`}
-                    width={bioSection.fields.image.fields.file.details.image.width}
-                    height={bioSection.fields.image.fields.file.details.image.height}
-                    alt="This is an image"
-                    />
-                    <p class="md:w-1/2 py-4 place-self-center md:px-4">{bioSection.fields.paragraph}</p>
-                </li>
+            {contentfulData.map((bioSection: any, index: number) => (    
+                <>
+                    <li class={`flex flex-col ${index % 2 == 0 ? "md:flex-row-reverse" : "md:flex-row"}`}>
+                        <Image
+                        class="w-full md:w-1/2 max-h-96 object-top object-cover"
+                        src={`https:${bioSection.fields.image.fields.file.url}`}
+                        width={bioSection.fields.image.fields.file.details.image.width}
+                        height={bioSection.fields.image.fields.file.details.image.height}
+                        alt="This is an image"
+                        />
+                        <p class="md:w-1/2 py-4 place-self-center md:px-4">{bioSection.fields.paragraph}</p>
+                    </li>
+                </>
             ))}
         </ul>
     </div>
