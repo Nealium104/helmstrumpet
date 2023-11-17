@@ -35,7 +35,7 @@ const contentfulData = await fetchData();
     <h1 class="text-8xl font-extrabold uppercase">Bio</h1>
     <div>
         <ul>
-            {contentfulData.map((bioSection: any, index: number) => (    
+            {contentfulData?.map((bioSection: any, index: number) => (    
                 <li class={`flex flex-col ${index % 2 == 0 ? "md:flex-row-reverse" : "md:flex-row"}`}>
                     <Image
                     class="w-full md:w-1/2 max-h-96 object-top object-cover"
