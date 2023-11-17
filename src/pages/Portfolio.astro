@@ -1,6 +1,22 @@
 ---
 import Layout from "../Layouts/Layout.astro";
+
+const fetchData = async () => {
+  try {
+      const response = await fetch(`${process.env.BASE_URL}/contentful-fetch?content_type=gigDate`);
+       const data = await response.json();
+      return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
+  }
+};
+
+const contentfulData = await fetchData();
 ---
 <Layout>
     <h1 class="text-8xl uppercase font-extrabold">Portfolio</h1>
+    {contentfulData.map((item: any) => (
+        <div>{item.fields.venue}</div>)
+    )}
 </Layout>
