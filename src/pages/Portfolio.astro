@@ -1,5 +1,6 @@
 ---
 import Layout from "../Layouts/Layout.astro";
+import { Image } from "astro:assets";
 
 const fetchData = async () => {
   try {
@@ -13,10 +14,27 @@ const fetchData = async () => {
 };
 
 const contentfulData = await fetchData();
+
+console.log(contentfulData[0].fields.images[0]);
 ---
 <Layout>
     <h1 class="text-8xl uppercase font-extrabold">Portfolio</h1>
-    {contentfulData.map((item: any, index: number) => {(
-      <h2>{item.fields.title}</h2>
-    )})}
+    {contentfulData.map((item: any, index: number) => (
+      <h2 class="text-8xl">{item.fields.title}</h2>
+      <div class="flex">
+        <p class="w-1/2 pr-4 pt-4 pb-4">{item.fields.paragraph}</p>
+        <div>
+          {item.fields.images.map((item: any) => (
+            <Image 
+            src={`https:${item.fields.file.url}`}
+            width="500"
+            height="500"
+            alt="image"
+            />
+          ))}
+        </div>
+      </div>
+    ))}
 </Layout>
+
+<!-- .fields.image.fields.file.url -->
