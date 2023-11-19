@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.2",
+    "@fontsource-variable/playfair-display": "^5.0.18",
     "@fontsource/source-sans-pro": "^5.0.8",
     "@sendgrid/mail": "^7.7.0",
     "astro": "^3.3.2",

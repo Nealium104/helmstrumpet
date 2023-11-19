@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import tylerFrontLong from '../images/tylerFrontLong.jpg'
 import Layout from "../Layouts/Layout.astro"
+import '@fontsource-variable/playfair-display'
 
 const valueStatements = ["Orchestra", "Jazz", "Chamber", "Lead", "Teaching", "Solo"]
 // Use single quotes on the outside 'Like this'
@@ -20,7 +21,7 @@ const quote = '"Lorem ipsum and a bunch of other stuff in a quote." - Person'
 				<div class="overlay h-full w-full z-20 bg-black/25 absolute">
 				</div>
 				<div class="h-full shadow-black shadow-lg">
-					<h1 class="absolute h-full w-full flex flex-col justify-center text-white z-30 text-8xl font-bold">
+					<h1 class="absolute h-full w-full flex flex-col justify-center text-white z-30 text-8xl font-bold font-playfair-display">
 						<span class="span1">Tyler</span>
 						<span class="self-end">Helms</span>
 					</h1>

@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       "source-sans-pro": ["Source Sans Pro", "sans"],
+      "playfair-display": ["Playfair Display Variable", "sans-serif"],
     },
     extend: {},
   },
