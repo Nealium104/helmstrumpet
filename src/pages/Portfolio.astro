@@ -18,13 +18,13 @@ const contentfulData = await fetchData();
 console.log(contentfulData[0]);
 ---
 <Layout>
-    <h1 class="text-8xl uppercase font-extrabold font-playfair-display">Portfolio</h1>
+    <h1 class="text-5xl md:text-8xl uppercase font-extrabold font-playfair-display">Portfolio</h1>
     <div class="py-4">
     {contentfulData.map((item: any, index: number) => (
-      <div class="py-8">  
-        <h2 class="text-8xl font-playfair-display">{item.fields.title}</h2>
+      <div class="py-8 border-b-2 border-gray-300">  
+        <h2 class="text-5xl md:text-8xl font-playfair-display">{item.fields.title}</h2>
         <div class="flex flex-col">
-          <div class="grid grid-cols-3 items-center gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
             {item.fields.images.map((item: any) => (
               <Image 
               src={`https:${item.fields.file.url}`}
@@ -34,10 +34,10 @@ console.log(contentfulData[0]);
               />
               ))}
               </div>
-              <p class="w-1/2 pr-4 pt-4 pb-4">{item.fields.paragraph}</p>
-              <div class="grid grid-cols-2 items-center gap-8">
+              <p class="w-full md:w-1/2 pr-4 pt-4 pb-4">{item.fields.paragraph}</p>
+              <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
                 {item.fields.videosList.map((item: string) => (
-                  <iframe width="560" height="315" src={item} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="max-w-full" width="560" height="315" src={item} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 ))}
               </div>
         </div>
