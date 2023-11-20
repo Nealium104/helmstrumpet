@@ -39,3 +39,34 @@ const quote = '"Lorem ipsum and a bunch of other stuff in a quote." - Person'
 			</div>
 		</div>
 </Layout>
+<style>
+@keyframes slideLeft {
+    from {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.span1 {
+    animation: slideLeft 1s ease-in-out forwards;
+}
+
+.self-end {
+    animation: slideRight 1s ease-in-out forwards;
+}
+</style>
