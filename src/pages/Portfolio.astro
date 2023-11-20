@@ -20,7 +20,7 @@ console.log(contentfulData[0]);
 <Layout>
     <h1 class="text-5xl md:text-8xl uppercase font-extrabold font-playfair-display">Portfolio</h1>
     <div class="py-4">
-    {contentfulData.map((item: any, index: number) => (
+    {contentfulData.reverse().map((item: any, index: number) => (
       <div class="py-8 border-b-2 border-gray-300">  
         <h2 class="text-5xl md:text-8xl font-playfair-display">{item.fields.title}</h2>
         <div class="flex flex-col">
