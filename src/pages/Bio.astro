@@ -21,7 +21,7 @@ console.log(contentfulData)
     <h1 class="text-8xl font-extrabold font-playfair-display uppercase">Bio</h1>
     <div>
         <ul>
-            {contentfulData.sort((a: any,b: any) => b.fields.position - a.fields.position).map((bioSection: any, index: number) => (    
+            {contentfulData.sort((a: any,b: any) => a.fields.position - b.fields.position).map((bioSection: any, index: number) => (    
                 <>
                     <li class={`flex flex-col ${index % 2 == 0 ? "md:flex-row-reverse" : "md:flex-row"}`}>
                         <Image
