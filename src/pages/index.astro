@@ -25,7 +25,7 @@ console.log(contentfulData)
 ---
 <Layout>
 		<div class="grid grid-cols-1 md:grid-cols-3">
-			<div class="p-8 text-8xl 2xl:text-9xl text-gray-400 blur-sm select-none hidden h-screen md:block">
+			<div class="left-statements p-8 text-8xl 2xl:text-9xl text-gray-400 blur-sm select-none hidden h-screen md:block">
 				<ul class="h-full flex flex-col justify-evenly font-extrabold uppercase drop-shadow-lg">
 					{valueStatements.map(statement => (
 						<li>{statement}</li>
@@ -49,7 +49,7 @@ console.log(contentfulData)
 					/>
 				</div>
 				</div>
-			<div class="h-screen flex items-center p-8">
+			<div class="h-screen flex items-center p-8 right-statements">
 				<p class="text-7xl font-extrabold flex flex-col text-gray-500">{contentfulData[0].fields.text.map((statement: any) => <span>{statement}</span>)}</p>
 			</div>
 		</div>
@@ -77,11 +77,11 @@ console.log(contentfulData)
     }
 }
 
-.span1 {
+.span1, .right-statements {
     animation: slideLeft 1s ease-in-out forwards;
 }
 
-.self-end {
+.self-end, .left-statements {
     animation: slideRight 1s ease-in-out forwards;
 }
 </style>
