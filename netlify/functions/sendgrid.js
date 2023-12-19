@@ -6,12 +6,13 @@ exports.handler = async (event, context) => {
   const formData = new URLSearchParams(event.body);
   const name = formData.get("name");
   const email = formData.get("email");
-  const subject = formData.get("subject");
+  const subject = "New Message From Trumpet Helms!";
   const message = formData.get("message");
 
   const msg = {
     to: "neal.grindstaff@gmail.com",
     from: "neal.grindstaff@gmail.com",
+    subject: subject,
     text: message,
     html: `From:${name} at ${email} <strong>${message}</strong>`,
   };
