@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
   const message = formData.get("message");
 
   const msg = {
-    to: "trumpethelms@gmail.com",
+    to: "neal.grindstaff@gmail.com",
     from: "neal.grindstaff@gmail.com",
     subject: subject,
     text: message,
