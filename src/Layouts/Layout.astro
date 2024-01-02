@@ -21,7 +21,7 @@ import { ViewTransitions, fade } from 'astro:transitions';
         <title>Tyler Helms</title>
         <ViewTransitions />
     </head>
-    <body class="max-w-screen-xl mx-auto font-source-sans-pro px-4 overflow-hidden">
+    <body class="md:max-w-screen-xl mx-auto font-source-sans-pro px-4 overflow-hidden w-screen">
             <Nav transition:persist />
         <div transition:animate={fade({ duration: '1s' })}>
             <slot />
