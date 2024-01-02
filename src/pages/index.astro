@@ -19,7 +19,9 @@ const fetchData = async () => {
   }
 };
 
-const contentfulData = await fetchData();
+// const contentfulData = await fetchData();
+
+const contentfulData = ["String", "String", "Another String", "Last String"]
 
 console.log(contentfulData)
 ---
@@ -50,7 +52,8 @@ console.log(contentfulData)
 				</div>
 				</div>
 			<div class="h-screen flex items-center p-8 right-statements overflow-hidden">
-				<p class="text-7xl font-extrabold flex flex-col text-gray-500 leading-loose">{contentfulData[0] && contentfulData[0].fields.text.map((statement: any) => <span>{statement}</span>)}</p>
+				<!-- contentfulData[0].fields.text.map -->
+				<p class="text-7xl font-extrabold flex flex-col text-gray-500 leading-loose overflow-hidden">{contentfulData && contentfulData.map((statement: any) => <span>{statement}</span>)}</p>
 			</div>
 		</div>
 </Layout>
