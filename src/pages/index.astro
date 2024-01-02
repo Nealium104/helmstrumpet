@@ -25,7 +25,7 @@ console.log(contentfulData)
 ---
 <Layout>
 		<div class="grid grid-cols-1 md:grid-cols-3">
-			<div class="left-statements p-8 text-8xl 2xl:text-9xl text-gray-400 blur-sm select-none hidden h-screen md:block">
+			<div class="left-statements p-8 text-8xl 2xl:text-9xl text-gray-400 blur-sm select-none hidden h-screen md:block overflow-hidden">
 				<ul class="h-full flex flex-col justify-evenly font-extrabold uppercase drop-shadow-lg">
 					{valueStatements.map(statement => (
 						<li>{statement}</li>
