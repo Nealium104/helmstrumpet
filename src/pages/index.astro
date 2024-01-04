@@ -25,8 +25,8 @@ console.log(contentfulData)
 ---
 <Layout>
 		<div class="grid grid-cols-1 md:grid-cols-3">
-			<div class="left-statements p-8 text-8xl 2xl:text-9xl text-gray-400 blur-sm select-none hidden h-screen md:block overflow-hidden">
-				<ul class="h-full flex flex-col justify-evenly font-extrabold uppercase drop-shadow-lg overflow-hidden">
+			<div class="left-statements p-8 text-8xl 2xl:text-9xl text-gray-400 blur-sm select-none hidden h-screen md:block overflow-x-hidden">
+				<ul class="h-full flex flex-col justify-evenly font-extrabold uppercase drop-shadow-lg overflow-x-hidden">
 					{valueStatements.map(statement => (
 						<li>{statement}</li>
 					))}
@@ -36,7 +36,7 @@ console.log(contentfulData)
 				<div class="overlay h-full w-full z-20 bg-black/25 absolute">
 				</div>
 				<div class="h-full shadow-black shadow-lg">
-					<h1 class="absolute h-full w-full flex flex-col justify-center text-white z-30 text-8xl font-bold font-playfair-display overflow-hidden">
+					<h1 class="absolute h-full w-full flex flex-col justify-center text-white z-30 text-8xl font-bold font-playfair-display overflow-x-hidden">
 						<span class="span1">Tyler</span>
 						<span class="self-end">Helms</span>
 					</h1>
@@ -49,8 +49,8 @@ console.log(contentfulData)
 					/>
 				</div>
 				</div>
-			<div class="h-screen flex items-center p-8 right-statements overflow-hidden">
-				<p class="text-7xl font-extrabold flex flex-col text-gray-500 leading-loose overflow-hidden">{contentfulData[0] && contentfulData[0].fields.text.map((statement: any) => <span>{statement}</span>)}</p>
+			<div class="h-screen flex items-center p-8 right-statements overflow-x-hidden">
+				<p class="text-7xl font-extrabold flex flex-col text-gray-500 leading-loose overflow-x-hidden">{contentfulData[0] && contentfulData[0].fields.text.map((statement: any) => <span>{statement}</span>)}</p>
 			</div>
 		</div>
 </Layout>
