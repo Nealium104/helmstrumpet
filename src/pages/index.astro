@@ -49,7 +49,7 @@ console.log(contentfulData)
 					/>
 				</div>
 				</div>
-			<div class="h-screen flex items-center right-statements">
+			<div class="h-screen flex items-center p-8 right-statements overflow-x-hidden border-red-500 border-2">
 				<p class="text-6xl md:w-7xl font-extrabold flex flex-col text-gray-500 leading-loose w-fit overflow-x-hidden">{contentfulData[0] && contentfulData[0].fields.text.map((statement: any) => <span>{statement}</span>)}</p>
 			</div>
 		</div>
