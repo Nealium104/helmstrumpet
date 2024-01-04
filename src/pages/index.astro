@@ -50,7 +50,7 @@ console.log(contentfulData)
 				</div>
 				</div>
 			<div class="h-screen flex items-center p-8 right-statements">
-				<p class="text-6xl md:w-7xl font-extrabold flex flex-col text-gray-500 leading-loose">{contentfulData[0] && contentfulData[0].fields.text.map((statement: any) => <span class="overflow-x-hidden">{statement}</span>)}</p>
+				<p class="text-6xl md:w-7xl font-extrabold flex flex-col text-gray-500 leading-loose w-fit overflow-x-hidden">{contentfulData[0] && contentfulData[0].fields.text.map((statement: any) => <span>{statement}</span>)}</p>
 			</div>
 		</div>
 </Layout>
