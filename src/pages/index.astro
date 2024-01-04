@@ -37,8 +37,8 @@ console.log(contentfulData)
 				</div>
 				<div class="h-full shadow-black shadow-lg">
 					<h1 class="absolute h-full w-full flex flex-col justify-center text-white z-30 text-8xl font-bold font-playfair-display overflow-x-hidden">
-						<span class="span1">Tyler</span>
-						<span class="self-end">Helms</span>
+						<span class="span1 w-fit">Tyler</span>
+						<span class="self-end w-fit">Helms</span>
 					</h1>
 					<Image
 						class="h-full object-cover" 
@@ -49,8 +49,8 @@ console.log(contentfulData)
 					/>
 				</div>
 				</div>
-			<div class="h-screen flex items-center p-8 right-statements overflow-x-hidden">
-				<p class="text-7xl font-extrabold flex flex-col text-gray-500 leading-loose overflow-x-hidden">{contentfulData[0] && contentfulData[0].fields.text.map((statement: any) => <span>{statement}</span>)}</p>
+			<div class="h-screen flex items-center p-8 right-statements">
+				<p class="text-6xl md:w-7xl font-extrabold flex flex-col text-gray-500 leading-loose overflow-x-hidden">{contentfulData[0] && contentfulData[0].fields.text.map((statement: any) => <span>{statement}</span>)}</p>
 			</div>
 		</div>
 </Layout>
