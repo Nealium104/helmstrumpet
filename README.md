@@ -17,12 +17,12 @@ You can find more information as well as a good tutorial on how to get started a
 ### Tailwind 🎨
 
 I went with tailwind for the styling. I've used it for a ton of projects. It's only a tiny bit opinionated, so you can use inline styles if you don't feel like fussing with it too much, but it's pretty easy to use. You just write classes for all the styles directly in your markup. Here's an example:
-
+```html
 <div class="flex flex-col gap-4">
 	<h1 class="text-5xl">This is my big title!</h1>
 	<span class="text-sm italic">This is my small, italicized subtitle</span>
 </div>
-
+```
 You can find a full list of utility classes at their website: https://tailwindcss.com/
 
 ### Netlify 🌎
