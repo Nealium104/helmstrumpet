@@ -18,7 +18,7 @@ const contentfulData = await fetchData();
 console.log(contentfulData[0]);
 ---
 <Layout>
-    <h1 class="text-5xl md:text-8xl uppercase font-extrabold font-playfair-display">Portfolio</h1>
+    <h1 class="text-6xl md:text-8xl uppercase font-extrabold font-playfair-display">Portfolio</h1>
     <div class="py-4">
     {contentfulData.sort((a: any,b: any) => a.fields.position - b.fields.position).map((item: any, index: number) => (
       <div class="py-4 border-b-2 border-gray-300">  

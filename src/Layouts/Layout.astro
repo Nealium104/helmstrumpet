@@ -22,7 +22,8 @@ import { ViewTransitions, fade } from 'astro:transitions';
         <ViewTransitions />
     </head>
     <body class="md:max-w-screen-xl mx-auto font-source-sans-pro px-4 overflow-x-hidden w-screen">
-            <Nav transition:persist />
+        <Nav transition:persist />
+        <div class="h-24 md:hidden"></div>
         <div transition:animate={fade({ duration: '1s' })}>
             <slot />
         </div>

@@ -1,11 +1,13 @@
 ---
 import '@fontsource-variable/playfair-display'
+import { Icon } from 'astro-icon'
 ---
 
 <nav>
-    <ul class="flex justify-between text-2xl items-center h-20">
+    <!-- Desktop -->
+    <ul class="md:flex justify-between text-2xl items-center h-20 hidden">
         <div>
-            <a class="font-extrabold font-playfair-display transition duration-150 hover:scale-110 hover:-translate-y-2"href="/"><li>Tyler Helms</li></a>
+            <a class="font-extrabold font-playfair-display transition duration-150 hover:scale-110 hover:-translate-y-2" href="/"><li>Tyler Helms</li></a>
         </div>
         <div class="flex gap-8">
             <li><a class="transition duration-150 hover:scale-110 hover:-translate-y-2" href="/Bio">Bio</a></li>
@@ -13,4 +15,32 @@ import '@fontsource-variable/playfair-display'
             <li><a class="transition duration-150 hover:scale-110 hover:-translate-y-2" href="/Contact">Contact</a></li>
         </div>
     </ul>
+    <!-- Mobile -->
+    <ul class="flex flex-col text-4xl h-20 w-full fixed z-20 bg-white/50 md:hidden">
+        <div>
+            <div class="flex">
+                <li class="w-20 pr-4 pt-2 duration-150 hover:scale-125 hover:text-gray-700" id="MobileMenuButton"><Icon pack="mdi" name="menu" /></a></li>
+                <a class="font-extrabold font-playfair-display transition duration-150 my-auto hover:scale-110 hover:-translate-y-2"href="/"><li>Tyler Helms</li></a>
+            </div>
+            <div class="flex flex-col w-full gap-36 items-center bg-white/50 mt-2 py-16 h-screen" id="MobileMenu">
+                <li><a class="flex flex-col items-center transition duration-150 hover:scale-110 hover:-translate-y-2" href="/Bio"><Icon class="w-12" pack="fluent" name="person-12-filled" />Bio</a></li>
+                <li><a class="flex flex-col items-center transition duration-150 hover:scale-110 hover:-translate-y-2" href="/Portfolio"><Icon class="w-12" pack="fluent" name="music-note-2-16-filled" />Portfolio</a></li>
+                <li><a class="flex flex-col items-center transition duration-150 hover:scale-110 hover:-translate-y-2" href="/Contact"><Icon class="w-12" pack="fluent" name="mail-open-person-20-filled" />Contact</a></li>
+            </div>
+        </div>
+    </ul>
 </nav>
+<script>
+
+    
+    const toggleMenu = () => {
+        document.getElementById('MobileMenu')?.classList.toggle('hidden')
+    }
+
+    document.addEventListener('astro:page-load', event => {
+        const MobileMenuButton = document.getElementById('MobileMenuButton')
+        if(MobileMenuButton) {
+            MobileMenuButton.addEventListener('click', toggleMenu);
+        }
+    })
+</script>
